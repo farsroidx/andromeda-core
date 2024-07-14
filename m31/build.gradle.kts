@@ -52,7 +52,7 @@ dependencies {
     implementation("androidx.multidex:multidex:2.0.1")
 
     // Base Module noinspection GradleDynamicVersion
-    api("com.github.farsroidx:andromeda-foundation:1.0.1")
+    api("com.github.farsroidx:andromeda-foundation:1.0.0")
 
     // Koin
     implementation("io.insert-koin:koin-android:3.5.6")
