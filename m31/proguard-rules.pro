@@ -9,8 +9,8 @@
 
 # Keep all extension functions in ir.farsroidx.m31 package
 -keepclassmembers class ir.farsroidx.m31.** {
-    public protected <methods>;
-    public protected <fields>;
+    <methods>;
+    <fields>;
 }
 
 # Preserve Kotlin metadata
