@@ -54,79 +54,34 @@ dependencies {
 #### 3. Adding the following rules to use R8 and proguard in `proguard-rules.pro`:
 
 ```pro
--dontwarn java.lang.invoke.StringConcatFactory
-
 # Keep all classes and interfaces in ir.farsroidx.m31 package
 -keep class ir.farsroidx.m31.** { *; }
 
-# Keep all fields and methods in ir.farsroidx.m31 package
+# Keep all class members (fields and methods) in ir.farsroidx.m31 package
 -keepclassmembers class ir.farsroidx.m31.** { *; }
 
-# Keep all extension functions in ir.farsroidx.m31 package
+# Keep all public methods in ir.farsroidx.m31 package
 -keepclassmembers class ir.farsroidx.m31.** {
     public <methods>;
-}
-
-
-
-
--dontwarn java.lang.invoke.StringConcatFactory
-
-# Keep all classes and interfaces in ir.farsroidx.m31 package
--keep class ir.farsroidx.m31.** { *; }
-
-# Keep all fields and methods in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** { *; }
-
-# If using reflection, keep the names of the fields in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** {
-    <fields>;
-}
-
-# If using reflection, keep the names of the methods in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** {
-    <methods>;
+    public <fields>;
 }
 
 # Keep all extension functions in ir.farsroidx.m31 package
 -keepclassmembers class ir.farsroidx.m31.** {
     public <methods>;
+    public <fields>;
 }
 
-# Keep all public and protected fields and methods in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** {
-    public protected <fields>;
-    public protected <methods>;
-}
+# Keep property delegates
+-keep class kotlin.Lazy { *; }
+-keep class kotlin.LazyKt { *; }
+-keep class kotlin.reflect.KProperty { *; }
+-keep class kotlin.reflect.KProperty0 { *; }
+-keep class kotlin.reflect.KProperty1 { *; }
+-keep class kotlin.reflect.KProperty2 { *; }
 
-# Keep all public and protected classes and interfaces in ir.farsroidx.m31 package
--keep class ir.farsroidx.m31.** {
-    public protected *;
-}
-
-
-
-
-
-# Ignore warnings about java.lang.invoke.StringConcatFactory
+# Prevent warnings for java.lang.invoke.StringConcatFactory
 -dontwarn java.lang.invoke.StringConcatFactory
-
-# Keep all classes and interfaces in ir.farsroidx.m31 package
--keep class ir.farsroidx.m31.** { *; }
-
-# Keep all fields, methods, and variables in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** { *; }
-
-# Keep all extension functions in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** {
-    public protected <methods>;
-    public protected <fields>;
-}
-
-# Preserve Kotlin metadata
--keep class kotlin.Metadata { *; }
--keep class kotlin.jvm.internal.* { *; }
-
 ```
 
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/farsroidx)
