@@ -35,6 +35,10 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -48,15 +52,18 @@ android {
 dependencies {
 
     // Android-X
-    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.multidex:multidex:2.0.1")
 
     // Base Module noinspection GradleDynamicVersion
-    api("com.github.farsroidx:andromeda-foundation:1.0.0")
+    api("com.github.farsroidx:andromeda-foundation:2.0.0")
 
     // Koin
-    implementation("io.insert-koin:koin-android:3.5.6")
+    implementation("io.insert-koin:koin-android:4.0.3")
 
+    // Androidx
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7")
 }
 
 publishing {
@@ -67,7 +74,7 @@ publishing {
 
             groupId    = "ir.farsroidx.m31"
             artifactId = "andromeda-core"
-            version    = "1.0.0"
+            version    = "2.0.0"
 
             afterEvaluate {
 
