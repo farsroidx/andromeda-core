@@ -12,7 +12,7 @@ plugins {
 android {
 
     namespace  = "ir.farsroidx.m31"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         multiDexEnabled           = true
@@ -58,7 +58,7 @@ dependencies {
     implementation("androidx.multidex:multidex:2.0.1")
 
     // Base Module noinspection GradleDynamicVersion
-    api("com.github.farsroidx:andromeda-foundation:2.0.0")
+    api("com.github.farsroidx:andromeda-foundation:2.0.1")
 
     // Koin
     implementation("io.insert-koin:koin-android:4.0.3")
@@ -76,7 +76,7 @@ publishing {
 
             groupId    = "ir.farsroidx.m31"
             artifactId = "andromeda-core"
-            version    = "2.0.0"
+            version    = "2.0.1"
 
             afterEvaluate {
 

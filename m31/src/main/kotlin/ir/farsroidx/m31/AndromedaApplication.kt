@@ -17,7 +17,7 @@ abstract class AndromedaApplication : MultiDexApplication() {
         super.onCreate()
 
         // Setup and Start Koin
-        onKoinInitialized( installAndromeda( getAndromedaProviders() ) )
+        onKoinInitialized( installAndromeda( initAndromedaProviders() ) )
 
     }
 
@@ -37,6 +37,6 @@ abstract class AndromedaApplication : MultiDexApplication() {
      *
      * @return A list of AndromedaProvider instances.
      */
-    open fun getAndromedaProviders(): List<AndromedaProvider> = listOf()
+    open fun initAndromedaProviders(): List<AndromedaProvider> = listOf()
 
 }
