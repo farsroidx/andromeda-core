@@ -1,3 +1,5 @@
+import org.gradle.language.nativeplatform.internal.Dimensions.applicationVariants
+
 plugins {
     // android
     id("com.android.library")
@@ -36,7 +38,7 @@ android {
     }
 
     buildFeatures {
-        buildConfig = true
+        buildConfig = false
     }
 
     compileOptions {

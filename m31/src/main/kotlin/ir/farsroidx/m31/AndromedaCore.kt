@@ -21,8 +21,8 @@ import org.koin.dsl.module
  */
 internal fun AndromedaApplication.installAndromeda(providers: List<AndromedaProvider>) = startKoin {
 
-    // Enable Koin logging only in DEBUG mode
-    if (BuildConfig.DEBUG) androidLogger(Level.DEBUG) else androidLogger(Level.NONE)
+    // Set Koin logging: NONE mode
+    androidLogger(Level.NONE)
 
     // Set Android context for dependency injection
     androidContext(this@installAndromeda)
