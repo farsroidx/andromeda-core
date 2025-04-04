@@ -5,6 +5,7 @@ plugins {
     id("com.android.library")
     // jetbrains
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
     // maven
     id("maven-publish")
 }
@@ -39,6 +40,7 @@ android {
 
     buildFeatures {
         buildConfig = false
+        dataBinding = true
     }
 
     compileOptions {
@@ -63,7 +65,10 @@ dependencies {
     // Koin
     implementation("io.insert-koin:koin-android:4.0.3")
 
-    // Androidx
+    // Andromeda
+    implementation("com.github.farsroidx:andromeda-extensions:2.1.0")
+
+    // Lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7")
 }
@@ -76,7 +81,7 @@ publishing {
 
             groupId    = "ir.farsroidx.m31"
             artifactId = "andromeda-core"
-            version    = "2.0.1"
+            version    = "2.1.0"
 
             afterEvaluate {
 
