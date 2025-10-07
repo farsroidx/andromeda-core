@@ -25,17 +25,8 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Andromeda"
+rootProject.name = "Andromeda-Core"
 
 include(":app")
 
-include(":m31-views-additives")
-include(":m31-api")
-include(":m31-cache-file")
-include(":m31-compose")
-include(":m31-compose-additives")
-include(":m31-database")
-include(":m31-exception-ui")
-include(":m31-preferences")
-include(":m31-socket-io")
-include(":m31-views")
+include(":m31")
