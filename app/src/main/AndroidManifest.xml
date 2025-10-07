@@ -3,21 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:allowBackup="true"
+        android:name=".Application"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
         android:icon="@android:mipmap/sym_def_app_icon"
-        android:label="M31-Core"
+        android:label="@string/andromeda_core_name"
         android:roundIcon="@android:mipmap/sym_def_app_icon"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Holo"
+        android:theme="@style/Theme.Andromeda"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>

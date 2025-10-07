@@ -1,8 +1,8 @@
-# Andromeda-Core ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
+# Andromeda ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![Upwork](https://img.shields.io/badge/UpWork-6FDA44?style=for-the-badge&logo=Upwork&logoColor=white)
 
 A library for using pre-built codes
 
-> ![GitHub repo size](https://img.shields.io/github/repo-size/farsroidx/andromeda-core)
+> Library Size: ~500kb
 
 ### Installation:
 
@@ -12,10 +12,10 @@ A library for using pre-built codes
 ```groovy
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        .
-        .
-        ------> maven { url 'https://jitpack.io' }
+        repositories {
+        google()
+        mavenCentral()
+------> maven { url 'https://jitpack.io' }
     }
 }
 ```
@@ -26,62 +26,37 @@ dependencyResolutionManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        .
-        .
-        ------> maven(url = "https://jitpack.io")
+        mavenLocal()
+        mavenCentral()
+        google()
+------> maven(url = "https://jitpack.io")
     }
 }
 ```
 
-#### 2. Copy the following line in section `dependencies` in file `build.gradle` of module `app` and replace it with `LATEST_VERSION` according to the latest version in the repository:
-
-### LATEST_VERSION: [![](https://jitpack.io/v/farsroidx/andromeda-core.svg)](https://jitpack.io/#farsroidx/andromeda-core)
+#### 2. Copy the following line in section `dependencies` in file `build.gradle` of module `app` and replace it with `LATEST_VERSION` according to the latest version in the [![](https://jitpack.io/v/farsroidx/andromeda.svg)](https://jitpack.io/#farsroidx/andromeda) repository:
 
 ##### in `build.gradle`:
 ```groovy
 dependencies {
-    implementation 'com.github.farsroidx:andromeda-core:🔝LATEST_VERSION🔝'
+    implementation 'com.github.farsroidx:andromeda:LATEST_VERSION'
 }
 ```
 
 ##### in `build.gradle.kts`:
-```kotlin
+```groovy
 dependencies {
-    implementation("com.github.farsroidx:andromeda-core:🔝LATEST_VERSION🔝")
+    implementation("com.github.farsroidx:andromeda:LATEST_VERSION")
 }
 ```
 
-#### 3. Adding the following rules to use R8 and proguard in `proguard-rules.pro`:
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/riazati75)
 
-```pro
-# Keep all classes and interfaces in ir.farsroidx.m31 package
--keep class ir.farsroidx.m31.** { *; }
+### Change List
 
-# Keep all class members (fields and methods) in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** { *; }
-
-# Keep all public methods in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** {
-    public <methods>;
-    public <fields>;
-}
-
-# Keep all extension functions in ir.farsroidx.m31 package
--keepclassmembers class ir.farsroidx.m31.** {
-    public <methods>;
-    public <fields>;
-}
-
-# Keep property delegates
--keep class kotlin.Lazy { *; }
--keep class kotlin.LazyKt { *; }
--keep class kotlin.reflect.KProperty { *; }
--keep class kotlin.reflect.KProperty0 { *; }
--keep class kotlin.reflect.KProperty1 { *; }
--keep class kotlin.reflect.KProperty2 { *; }
-
-# Prevent warnings for java.lang.invoke.StringConcatFactory
--dontwarn java.lang.invoke.StringConcatFactory
-```
-
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/farsroidx)
+#### `v1.0.0` :
+- **Added**:
+    - ExceptionUi
+    - Dispatchers
+    - Memory
+    - Preference
